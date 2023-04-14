@@ -1,0 +1,15 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.center {
+    justify-content: center;
+}
+
+.main-img {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    margin: 20px auto; 
+    display: block;
+    overflow: hidden;
+    border-radius: 50%;
+}
