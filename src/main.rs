@@ -4,6 +4,7 @@ use std::fs;
 fn main() {
     build_home();
     build_blog();
+    build_social();
 }
 
 fn build_page(path: &str, content: &str) {
@@ -22,7 +23,7 @@ fn build_page(path: &str, content: &str) {
       <div class="hero-body">
         <div class="navbar-brand center">
           <a class="navbar-item has-text-light" href="social.html">social</a>
-          <a class="navbar-item has-text-light has-text-weight-bold is-flex is-size-1" href="/">💀 matty 3:16 ✊🏿</a>
+          <a class="navbar-item has-text-light has-text-weight-bold is-flex is-size-1" href="index.html">💀 matty 3:16 ✊🏿</a>
           <a class="navbar-item has-text-light" href="blog.html">blog</a>
         </div>
       </div>
@@ -53,12 +54,85 @@ fn build_blog() {
     for path in paths {
         let name = format!("{}", path.unwrap().path().display());
         let content = fs::read_to_string(name).unwrap();
-        let format = content;
-        let html = markdown_to_html(&format, &ComrakOptions::default());
+        let html = markdown_to_html(&content, &ComrakOptions::default());
         result += &html;
     }
     result += "</div>";
 
     build_page("blog.html", &result);
+}
+
+fn build_social() {
+    let paths = fs::read_dir("social").unwrap();
+    let mut result = r#"<div class="container"><nav class="level">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Tweets</p>
+      <p class="title">1,102,436</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Following</p>
+      <p class="title">0</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Followers</p>
+      <p class="title">1 Billion</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Likes</p>
+      <p class="title">Nobody</p>
+    </div>
+  </div>
+</nav>"#.to_string();
+    for path in paths {
+        let name = format!("{}", path.unwrap().path().display());
+        let content = fs::read_to_string(name).unwrap();
+        let html = format!(r#"<div class="box">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-64x64">
+        <img src="img/main.jpeg" alt="Image">
+      </figure>
+    </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong>💀 matty 3:16 ✊🏿</strong> <small>@matty316</small> <small>∞ ago</small>
+          <br>
+          {}
+        </p>
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <a class="level-item" aria-label="reply">
+            <span class="icon is-small">
+              <i class="fas fa-reply" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="retweet">
+            <span class="icon is-small">
+              <i class="fas fa-retweet" aria-hidden="true"></i>
+            </span>
+          </a>
+          <a class="level-item" aria-label="like">
+            <span class="icon is-small">
+              <i class="fas fa-heart" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </article>
+</div>"#, content);
+        result += &html;
+    }
+    result += "</div>";
+    build_page("social.html", &result);
 }
 
