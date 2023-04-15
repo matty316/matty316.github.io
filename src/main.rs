@@ -2,8 +2,12 @@ use comrak::{markdown_to_html, ComrakOptions};
 use std::fs;
 
 fn main() {
-    let contents = fs::read_to_string("posts/post.md").unwrap();
-    let html = markdown_to_html(&contents, &ComrakOptions::default());
+    build_home();
+    build_blog();
+}
+
+fn build_page(path: &str, content: &str) {
+    fs::remove_file(path).unwrap();
     let header = r#"<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,22 +37,28 @@ fn main() {
   </footer>
   </body>
 </html>"#;
-    print!("{html:?}");
+    let html = format!("{header} {content} {footer}");
+    fs::write(path, html).unwrap();
 }
 
-fn build_pages(header: &str, footer: &str) {
-    let pages = vec![
-        "index",
-        "social",
-        "blog",
-    ];
-
-    for p in pages {}
-}
-
-fn build_home(header: &str, footer: &str) {
+fn build_home() {
     let content = r#"<img class="main-img" src="img/main.jpeg"><p class="is-size-3 has-text-centered section has-text-weight-semibold">hi, i'm matty 🙏🏿. i like to make apps 📱, make people laugh 🤣, make powerpoints 📊, make bread 🥖🥐🍞, make clothes 🧶 and make enemies 😈.</p>"#;
-
+    build_page("index.html", content);
 }
 
+fn build_blog() {
+    let paths = fs::read_dir("posts").unwrap();
+
+    let mut result = "<div class=\"content container\">".to_string();
+    for path in paths {
+        let name = format!("{}", path.unwrap().path().display());
+        let content = fs::read_to_string(name).unwrap();
+        let format = content;
+        let html = markdown_to_html(&format, &ComrakOptions::default());
+        result += &html;
+    }
+    result += "</div>";
+
+    build_page("blog.html", &result);
+}
 
