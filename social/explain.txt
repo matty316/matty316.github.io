@@ -1,0 +1,1 @@
+if you need to get in contact with me please open a pull request to this repo: <a href="https://github.com/matty316/contact">contact</a>. i will ignore any other attempts to contact me thanx

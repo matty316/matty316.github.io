@@ -725,6 +725,7 @@ name = "website"
 version = "0.1.0"
 dependencies = [
  "comrak",
+ "yaml-rust",
 ]
 
 [[package]]
