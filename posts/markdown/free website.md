@@ -13,7 +13,7 @@ you dont need squarespace. dont let these youtubers mislead you. you dont even n
 
 ### tr:dr
 1. make a [github](https://github.com) account 
-2. create a repo and name it <your_username>.github.io (for example mine is called [matty316.github.io](https://github.com/matty316.github.io))
+2. create a repo and name it <your_username>.github.io (for example mine is called [matty316.github.io](https://github.com/matty316/matty316.github.io))
 3. push an index.html file to the repo. put some html in that hoe
 4. go to <your_username>.github.io (it may take a sec to deploy) 
 5. you have a website but now go make it pretty. i use [bulma.io](https://bulma.io) for css.
