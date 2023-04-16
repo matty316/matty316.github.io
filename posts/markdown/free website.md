@@ -17,4 +17,4 @@ you dont need squarespace. dont let these youtubers mislead you. you dont even n
 3. push an index.html file to the repo. put some html in that hoe
 4. go to <your_username>.github.io (it may take a sec to deploy) 
 5. you have a website but now go make it pretty. i use [bulma.io](https://bulma.io) for css.
-### checkout the [github pages](https://pages.github.com/) website for more detail instructions
+### checkout the [github pages](https://pages.github.com/) website for more detailed instructions
