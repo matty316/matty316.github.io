@@ -5,7 +5,7 @@ description: but they can let you watch your weird ass anime
 slug: vpn
 ---
 # tl:dr
-vpns cannot protect you privacy. they can however get around geo-blocking. you cant be completely anonymous online. the closest is probably [tor](https://www.torproject.org/). NEVER USE A FREE VPN FOR THE LOVE OF GOD.
+vpns cannot protect your privacy. they can however get around geo-blocking. you cant be completely anonymous online. the closest is probably [tor](https://www.torproject.org/). NEVER USE A FREE VPN FOR THE LOVE OF GOD.
 
 # youtubers stay lyin'
 
@@ -25,7 +25,7 @@ i say this because they represent themselves as a way to protect your privacy. w
 you cant. but you can be closer to it by using [tor](https://www.torproject.org/). the best vpn for privacy is probably [mullvad](https://mullvad.net/en). [mullvad also released a privacy minded browser along with tor](https://mullvad.net/en/browser). there is also [tails](https://tails.boum.org/) for a privacy focused operating system. again none of these are completely secure. if you are doing illegal shit, the cops can always catch you. my suggestion is dont do illegal shit. 
 
 # also most internet traffic is encrypted anyway
-you really aren't gaining much in security by using a vpn. any website using https encrypts the traffic. anyone snooping on your traffic can see what sites you are going on but cannot see what you are doing. for example you wanna log into your bank account from a coffeeshop using their wifi. theres a bad boy looking at the traffic going thru the wifi. they will see chase.com but thats all they will see. the rest will be non sense they need a key to decode. 
+you really aren't gaining much in security by using a vpn. any website using https encrypts the traffic. anyone snooping on your traffic can see what sites you are going on but cannot see what you are doing. for example you wanna log into your bank account from a coffeeshop using their wifi. theres a bad boy looking at the traffic going thru the wifi. they will see chase.com but thats all they will see. the rest will be nonsense they need a key to decode. 
 
 # ok but how do i keep the bad boy from seeing chase.com?
 ok so this is a use case for a vpn BUT it does not have to be from a vpn company. you can set up your own vpn on your home network or in the cloud (aws or linode for example). i can do a future tutorial on setting this up but there are a lot of resources for this. i like this [network chuck totorial](https://www.youtube.com/watch?v=m-i2JBtG4FE&t=3s) because of his strong DAD energy. 
