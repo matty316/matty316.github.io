@@ -4,9 +4,17 @@
     justify-content: center;
 }
 
+.mobile-menu {
+    visibility: hidden;
+    text-align: center;
+}
+
+.mobile-menu a {
+    padding: 0 20px;
+}
+
 .container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+   padding: 20px;
 }
 
 .main-img {
@@ -18,3 +26,10 @@
     overflow: hidden;
     border-radius: 50%;
 }
+
+@media only screen and (max-width: 1024px) {
+    .mobile-menu {
+        visibility: visible !important;
+    }
+}
+
